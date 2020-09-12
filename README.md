@@ -1,6 +1,8 @@
 ## RTL8812AU/21AU and RTL8814AU drivers
 Only for use with Linux & Android
 
+for quick install refer line 211
+
 [![Monitor mode](https://img.shields.io/badge/monitor%20mode-working-brightgreen.svg)](#)
 [![Frame Injection](https://img.shields.io/badge/frame%20injection-working-brightgreen.svg)](#)
 [![GitHub version](https://raster.shields.io/badge/version-v5.6.4.2-lightgrey.svg)](#)
@@ -112,7 +114,10 @@ $ sed -i 's/CONFIG_PLATFORM_ARM_RPI = n/CONFIG_PLATFORM_ARM_RPI = y/g' Makefile
 
 But for RPI 3B+ & 4B you will need to run those below which builds the ARM64 arch driver:
 ```
-$ sed -i 's/CONFIG_PLATFORM_I386_PC = y/CONFIG_PLATFORM_I386_PC = n/g' Makefile
+$ sed -i 's/CONFIG_PLATFORM_I386_PC = y/sudo apt install git dkms
+git clone https://github.com/aircrack-ng/rtl8812au.git
+cd rtl8812au
+sudo ./dkms-install.shCONFIG_PLATFORM_I386_PC = n/g' Makefile
 $ sed -i 's/CONFIG_PLATFORM_ARM64_RPI = n/CONFIG_PLATFORM_ARM64_RPI = y/g' Makefile
 ```
 
@@ -203,5 +208,12 @@ CGarces       - https://github.com/CGarces
 ZerBea        - https://github.com/ZerBea
 lwfinger      - https://github.com/lwfinger
 Ulli-Kroll.   - https://github.com/Ulli-Kroll
+
+-----
+
+sudo apt install git dkms
+git clone https://github.com/aircrack-ng/rtl8812au.git
+cd rtl8812au
+sudo ./dkms-install.sh
 
 ```
